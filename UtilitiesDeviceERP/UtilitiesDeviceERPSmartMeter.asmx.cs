@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using UtilitiesDeviceERP.Models;
 
 namespace UtilitiesDeviceERP
 {
@@ -18,9 +19,9 @@ namespace UtilitiesDeviceERP
     {
 
         [WebMethod]
-        public string UtilitiesDeviceERPSmartMeterCreateRequest_Out(string name)
+        public string UtilitiesDeviceERPSmartMeterCreateRequest_Out(UtilitiesDeviceERPSmartMeterCreateRequest utilitiesDeviceERPSmartMeterCreateRequest)
         {
-            return "Hello World"+ name;
+            return "Hello World";
         }
     }
 }

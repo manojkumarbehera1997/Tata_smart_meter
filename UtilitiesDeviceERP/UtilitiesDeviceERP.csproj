@@ -231,6 +231,7 @@
       <DependentUpon>UtilitiesDeviceERPSmartMeter.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Models\UtilitiesDeviceERPSmartMeterCreateRequest.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
