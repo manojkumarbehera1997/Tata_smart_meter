@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:p2="http://sap.com/xi/SAPGlobal20/Global" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:p1="http://sap.com/xi/IS-U/Global2" name="UtilitiesDeviceERPSmartMeterCreateRequest_Out" targetNamespace="http://sap.com/xi/IS-U/Global2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>Request Utilities Device Smart Meter Creation</wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true" />
+  <wsp:Policy wsu:Id="OP_UtilitiesDeviceERPSmartMeterCreateRequest_Out" />
+  <wsdl:types>
+    <xsd:schema xmlns="http://sap.com/xi/SAPGlobal20/Global" targetNamespace="http://sap.com/xi/SAPGlobal20/Global" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://sap.com/xi/IS-U/Global2" />
+      <xsd:element name="UtilitiesDeviceERPSmartMeterCreateRequest" type="p1:UtilsDvceERPSmrtMtrCrteReqMsg" />
+    </xsd:schema>
+    <xsd:schema xmlns="http://sap.com/xi/IS-U/Global2" targetNamespace="http://sap.com/xi/IS-U/Global2" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:simpleType name="BusinessScopeInstanceID.Content">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="EN">Identifier for the instance of a BusinessScope</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:token">
+          <xsd:minLength value="1" />
+          <xsd:maxLength value="36" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="AgencyIdentificationCode">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="EN">An AgencyIdentificationCode is a code representation of the agency responsible for a code list or identifier scheme, respectively</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:token">
+          <xsd:minLength value="1" />
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="UUID.Content">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="EN">Universally Unique Identifier</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:token">
+          <xsd:length value="36" />
+          <xsd:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="PhoneNumberAreaID">
+        <xsd:restriction base="xsd:token">
+          <xsd:minLength value="1" />
+          <xsd:maxLength value="10" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="PhoneNumberExtensionID">
+        <xsd:restriction base="xsd:token">
+          <xsd:minLength value="1" />
+          <xsd:maxLength value="10" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="CountryDiallingCode">
+        <xsd:restriction base="xsd:token">
+          <xsd:minLength value="1" />
+          <xsd:maxLength value="10" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="BusinessScopeTypeCode.Content">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="EN">Coded representation of the type of a BusinessScope</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:token">
+          <xsd:minLength value="1" />
+          <xsd:maxLength value="4" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="BusinessScopeID.Content">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="EN">Identifier of a BusinessScope</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:token">
+          <xsd:minLength value="1" />
+          <xsd:maxLength value="36" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="PhoneNumberSubscriberID">
+        <xsd:restriction base="xsd:token">
+          <xsd:minLength value="1" />
+          <xsd:maxLength value="30" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="Indicator">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="EN">Indicator is the representation of a situation that has exactly two mutually exclusive Boolean values.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:boolean" />
+      </xsd:simpleType>
+      <xsd:simpleType name="UtilitiesDeviceID.Content">
+        <xsd:restriction base="xsd:token">
+          <xsd:minLength value="1" />
+          <xsd:maxLength value="18" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="BusinessSystemID">
+        <xsd:restriction base="xsd:token">
+          <xsd:minLength value="1" />
+          <xsd:maxLength value="60" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="UtilitiesAdvancedMeteringSystemID.Content">
+        <xsd:restriction base="xsd:token">
+          <xsd:minLength value="1" />
+          <xsd:maxLength value="4" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="MEDIUM_Name.Content">
+        <xsd:restriction base="xsd:string">
+          <xsd:minLength value="1" />
+          <xsd:maxLength value="40" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="PartyStandardID.Content">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="EN">Standardized identifier for a party, and the identification scheme used is controlled by an agency from the code list DE 3055</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:token">
+          <xsd:minLength value="1" />
+          <xsd:maxLength value="13" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="Date">
+        <xsd:restriction base="xsd:date">
+          <xsd:pattern value="[0-9]{4}-[0-9]{2}-[0-9]{2}" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="SerialID">
+        <xsd:restriction base="xsd:token">
+          <xsd:minLength value="1" />
+          <xsd:maxLength value="30" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ProductInternalID.Content">
+        <xsd:restriction base="xsd:token">
+          <xsd:minLength value="1" />
+          <xsd:maxLength value="60" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="PartyInternalID.Content">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="EN">Proprietary identifier for a party</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:token">
+          <xsd:minLength value="1" />
+          <xsd:maxLength value="32" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ContactPersonInternalID.Content">
+        <xsd:restriction base="xsd:token">
+          <xsd:minLength value="1" />
+          <xsd:maxLength value="32" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="BusinessDocumentMessageID.Content">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="EN">Unique identifier of a business document in a (technical) message that is issued by the sender business application</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:token">
+          <xsd:minLength value="1" />
+          <xsd:maxLength value="35" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="CountryCode">
+        <xsd:restriction base="xsd:token">
+          <xsd:minLength value="2" />
+          <xsd:maxLength value="3" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="LanguageCode">
+        <xsd:restriction base="xsd:language">
+          <xsd:minLength value="2" />
+          <xsd:maxLength value="9" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="LANGUAGEINDEPENDENT_LONG_Name">
+        <xsd:restriction base="xsd:string">
+          <xsd:minLength value="0" />
+          <xsd:maxLength value="80" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="GLOBAL_DateTime">
+        <xsd:restriction base="xsd:dateTime">
+          <xsd:pattern value="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(.[0-9]{1,7})?Z" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="LANGUAGEINDEPENDENT_MEDIUM_Name">
+        <xsd:restriction base="xsd:string">
+          <xsd:minLength value="0" />
+          <xsd:maxLength value="40" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ProductStandardID_V1.Content">
+        <xsd:restriction base="xsd:token">
+          <xsd:minLength value="1" />
+          <xsd:maxLength value="50" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="BusinessScopeInstanceID">
+        <xsd:simpleContent>
+          <xsd:extension base="p1:BusinessScopeInstanceID.Content">
+            <xsd:attribute name="schemeID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="schemeAgencyID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+          </xsd:extension>
+        </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:complexType name="BusinessDocumentMessageID">
+        <xsd:simpleContent>
+          <xsd:extension base="p1:BusinessDocumentMessageID.Content">
+            <xsd:attribute name="schemeID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="schemeAgencyID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="schemeAgencySchemeAgencyID" type="p1:AgencyIdentificationCode" />
+          </xsd:extension>
+        </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:complexType name="MEDIUM_Name">
+        <xsd:simpleContent>
+          <xsd:extension base="p1:MEDIUM_Name.Content">
+            <xsd:attribute name="languageCode" type="p1:LanguageCode" />
+          </xsd:extension>
+        </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:complexType name="UtilitiesDeviceID">
+        <xsd:simpleContent>
+          <xsd:extension base="p1:UtilitiesDeviceID.Content">
+            <xsd:attribute name="schemeID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="schemeAgencyID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+          </xsd:extension>
+        </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:complexType name="BusinessScopeTypeCode">
+        <xsd:simpleContent>
+          <xsd:extension base="p1:BusinessScopeTypeCode.Content">
+            <xsd:attribute name="listID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="listVersionID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="15" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="listAgencyID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="listAgencySchemeID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="listAgencySchemeAgencyID" type="p1:AgencyIdentificationCode" />
+          </xsd:extension>
+        </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:complexType name="PartyInternalID">
+        <xsd:simpleContent>
+          <xsd:extension base="p1:PartyInternalID.Content">
+            <xsd:attribute name="schemeID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="schemeAgencyID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+          </xsd:extension>
+        </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:complexType name="UtilsDvceERPSmrtMtrCrteReqMsg">
+        <xsd:sequence>
+          <xsd:element name="MessageHeader" type="p1:BusinessDocumentMessageHeader" />
+          <xsd:element name="UtilitiesDevice" type="p1:UtilsDvceERPSmrtMtrCrteReqUtilsDvce" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="UUID">
+        <xsd:simpleContent>
+          <xsd:extension base="p1:UUID.Content">
+            <xsd:attribute name="schemeID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="schemeAgencyID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+          </xsd:extension>
+        </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:complexType name="BusinessDocumentMessageHeaderParty">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="EN">General information about a party that is responsible for sending or receiving a BusinessDocument at business application level</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="InternalID" type="p1:PartyInternalID" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="StandardID" type="p1:PartyStandardID" />
+          <xsd:element minOccurs="0" name="ContactPerson" type="p1:BusinessDocumentMessageHeaderPartyContactPerson" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PhoneNumber">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="AreaID" type="p1:PhoneNumberAreaID" />
+          <xsd:element minOccurs="0" name="SubscriberID" type="p1:PhoneNumberSubscriberID" />
+          <xsd:element minOccurs="0" name="ExtensionID" type="p1:PhoneNumberExtensionID" />
+          <xsd:element minOccurs="0" name="CountryCode" type="p1:CountryCode" />
+          <xsd:element minOccurs="0" name="CountryDiallingCode" type="p1:CountryDiallingCode" />
+          <xsd:element minOccurs="0" name="CountryName" type="p1:MEDIUM_Name" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BusinessDocumentMessageHeader">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="EN">Business information from the perspective of the sender application for identifying a business document (instance) within a (technical) message</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ID" type="p1:BusinessDocumentMessageID" />
+          <xsd:element minOccurs="0" name="UUID" type="p1:UUID" />
+          <xsd:element minOccurs="0" name="ReferenceID" type="p1:BusinessDocumentMessageID" />
+          <xsd:element minOccurs="0" name="ReferenceUUID" type="p1:UUID" />
+          <xsd:element name="CreationDateTime" type="p1:GLOBAL_DateTime" />
+          <xsd:element minOccurs="0" name="TestDataIndicator" type="p1:Indicator" />
+          <xsd:element minOccurs="0" name="ReconciliationIndicator" type="p1:Indicator" />
+          <xsd:element minOccurs="0" name="SenderBusinessSystemID" type="p1:BusinessSystemID" />
+          <xsd:element minOccurs="0" name="RecipientBusinessSystemID" type="p1:BusinessSystemID" />
+          <xsd:element minOccurs="0" name="SenderParty" type="p1:BusinessDocumentMessageHeaderParty" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="RecipientParty" type="p1:BusinessDocumentMessageHeaderParty" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="BusinessScope" type="p1:BusinessScope" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ProductInternalID">
+        <xsd:simpleContent>
+          <xsd:extension base="p1:ProductInternalID.Content">
+            <xsd:attribute name="schemeID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="schemeAgencyID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+          </xsd:extension>
+        </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:complexType name="UtilitiesAdvancedMeteringSystemID">
+        <xsd:simpleContent>
+          <xsd:extension base="p1:UtilitiesAdvancedMeteringSystemID.Content">
+            <xsd:attribute name="schemeID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="schemeAgencyID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+          </xsd:extension>
+        </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:complexType name="ContactPersonInternalID">
+        <xsd:simpleContent>
+          <xsd:extension base="p1:ContactPersonInternalID.Content">
+            <xsd:attribute name="schemeID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="schemeAgencyID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+          </xsd:extension>
+        </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:complexType name="BusinessScope">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="EN">Environment from which a message is sent</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="TypeCode" type="p1:BusinessScopeTypeCode" />
+          <xsd:element minOccurs="0" name="InstanceID" type="p1:BusinessScopeInstanceID" />
+          <xsd:element minOccurs="0" name="ID" type="p1:BusinessScopeID" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PartyStandardID">
+        <xsd:simpleContent>
+          <xsd:extension base="p1:PartyStandardID.Content">
+            <xsd:attribute name="schemeAgencyID" use="required">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="3" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+          </xsd:extension>
+        </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:complexType name="UtilsDvceERPSmrtMtrCrteReqUtilsDvce">
+        <xsd:sequence>
+          <xsd:element name="ID" type="p1:UtilitiesDeviceID" />
+          <xsd:element name="StartDate" type="p1:Date" />
+          <xsd:element name="EndDate" type="p1:Date" />
+          <xsd:element name="SerialID" type="p1:SerialID" />
+          <xsd:element name="MaterialID" type="p1:ProductInternalID" />
+          <xsd:element minOccurs="0" name="ProductUniqueItemID" type="p1:ProductStandardID_V1" />
+          <xsd:element minOccurs="0" name="IndividualMaterialManufacturerInformation" type="p1:UtilsDvceERPSmrtMtrCrteReqIndivMatlMfrInfo" />
+          <xsd:element minOccurs="0" name="SmartMeter" type="p1:UtilsDvceERPSmrtMtrCrteReqSmrtMtr" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BusinessDocumentMessageHeaderPartyContactPerson">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="EN">Contact person of a party that is responsible for sending or receiving a BusinessDocument</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="InternalID" type="p1:ContactPersonInternalID" />
+          <xsd:element minOccurs="0" maxOccurs="4" name="OrganisationFormattedName" type="p1:LANGUAGEINDEPENDENT_MEDIUM_Name" />
+          <xsd:element minOccurs="0" maxOccurs="4" name="PersonFormattedName" type="p1:LANGUAGEINDEPENDENT_LONG_Name" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="PhoneNumber" type="p1:PhoneNumber" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="FaxNumber" type="p1:PhoneNumber" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="EmailURI" type="p1:EmailURI" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="EmailURI">
+        <xsd:simpleContent>
+          <xsd:extension base="xsd:anyURI">
+            <xsd:attribute name="schemeID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+          </xsd:extension>
+        </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:complexType name="UtilsDvceERPSmrtMtrCrteReqIndivMatlMfrInfo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="PartyInternalID" type="p1:PartyInternalID" />
+          <xsd:element minOccurs="0" name="PartNumberID" type="p1:ProductInternalID" />
+          <xsd:element minOccurs="0" name="SerialID" type="p1:SerialID" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="UtilsDvceERPSmrtMtrCrteReqSmrtMtr">
+        <xsd:sequence>
+          <xsd:element name="UtilitiesAdvancedMeteringSystemID" type="p1:UtilitiesAdvancedMeteringSystemID" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ProductStandardID_V1">
+        <xsd:simpleContent>
+          <xsd:extension base="p1:ProductStandardID_V1.Content">
+            <xsd:attribute name="schemeID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="schemeAgencyID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+          </xsd:extension>
+        </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:complexType name="BusinessScopeID">
+        <xsd:simpleContent>
+          <xsd:extension base="p1:BusinessScopeID.Content">
+            <xsd:attribute name="schemeID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="schemeAgencyID">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:token">
+                  <xsd:minLength value="1" />
+                  <xsd:maxLength value="60" />
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+          </xsd:extension>
+        </xsd:simpleContent>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="UtilitiesDeviceERPSmartMeterCreateRequest">
+    <wsdl:documentation />
+    <wsdl:part name="UtilitiesDeviceERPSmartMeterCreateRequest" element="p2:UtilitiesDeviceERPSmartMeterCreateRequest" />
+  </wsdl:message>
+  <wsdl:portType name="UtilitiesDeviceERPSmartMeterCreateRequest_Out">
+    <wsdl:documentation>Request Utilities Device Smart Meter Creation</wsdl:documentation>
+    <wsdl:operation name="UtilitiesDeviceERPSmartMeterCreateRequest_Out">
+      <wsdl:documentation>Request Utilities Device Smart Meter Creation</wsdl:documentation>
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP_UtilitiesDeviceERPSmartMeterCreateRequest_Out" />
+      </wsp:Policy>
+      <wsdl:input message="p1:UtilitiesDeviceERPSmartMeterCreateRequest" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UtilitiesDeviceERPSmartMeterCreateRequest_OutBinding" type="p1:UtilitiesDeviceERPSmartMeterCreateRequest_Out">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <wsdl:operation name="UtilitiesDeviceERPSmartMeterCreateRequest_Out">
+      <operation soapAction="http://sap.com/xi/WebService/soap1.1" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <wsdl:input>
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>
