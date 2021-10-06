@@ -1,0 +1,39 @@
+create PROCEDURE Insert_Equipment
+(
+    @ID int,
+    @Utility_ID char(20),
+    @Meter_Class char(20),
+    @Manufacturer_ID char(20),
+    @Status char(20),
+    @Meter_ID char(20),
+    @Device_Type char(20),
+    @Model_ID char(20),
+    @StartDate [date],
+    @EndDate [date],
+    @Material_ID char(20),
+    @Name_Plate_ID int,
+	@HES_ID [int],
+	@Data_Source char(20),
+	@Org_ID [int],
+	@Created_by [int],
+	@Created_on [datetime],
+	@changed_by [int],
+	@changed_on [datetime]
+)
+AS
+BEGIN
+    IF EXISTS (SELECT 1 FROM [Equipment]
+        WHERE ID=@ID)
+    BEGIN
+        UPDATE [Equipment] set Utility_ID=@Utility_ID, Meter_Class=@Meter_Class,Manufacturer_ID=@Manufacturer_ID,Status=@Status,Meter_ID=@Meter_ID,Device_Type=@Device_Type,
+		Model_ID=@Model_ID,StartDate=@StartDate,EndDate=@EndDate,Material_ID=@Material_ID,Name_Plate_ID=@Name_Plate_ID,HES_ID=@HES_ID,Data_Source=@Data_Source,
+		Org_ID=@Org_ID,Created_by=@Created_by,Created_on=@Created_on,changed_by=@changed_by,changed_on=@changed_on
+        WHERE ID=@ID; 
+    END
+ELSE
+    BEGIN
+        INSERT into [Equipment] Values (@ID,@Utility_ID,@Meter_Class,@Manufacturer_ID,@Status,@Meter_ID,@Device_Type,@Model_ID,@StartDate,@EndDate,@Material_ID,
+		@Name_Plate_ID,@HES_ID,@Data_Source,@Org_ID,@Created_by,@Created_on,@changed_by,@changed_on)
+    END
+
+END

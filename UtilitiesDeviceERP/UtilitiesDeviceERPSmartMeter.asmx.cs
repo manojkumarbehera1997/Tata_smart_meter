@@ -38,26 +38,28 @@ namespace UtilitiesDeviceERP
             query = "Insert_Equipment";
             SqlCommand com = new SqlCommand(query, con);
             com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@ID", 3);
+           // com.Parameters.AddWithValue("@ID", );
             com.Parameters.AddWithValue("@Utility_ID ", utilitiesDeviceERPSmartMeterCreateRequest.UtilitiesDevice.ID);
-            com.Parameters.AddWithValue("@Meter_Class ", null);
-            com.Parameters.AddWithValue("@Manufacturer_ID", null);
-            com.Parameters.AddWithValue("@Status ", null);
+           // com.Parameters.AddWithValue("@Meter_Class ", null);
+           // com.Parameters.AddWithValue("@Manufacturer_ID", null);
+           // com.Parameters.AddWithValue("@Status ", null);
             com.Parameters.AddWithValue("@Meter_ID ", utilitiesDeviceERPSmartMeterCreateRequest.UtilitiesDevice.SerialID);
-            com.Parameters.AddWithValue("@Device_Type", null);
-            com.Parameters.AddWithValue("@Model_ID ", null);
+           // com.Parameters.AddWithValue("@Device_Type", null);
+            //com.Parameters.AddWithValue("@Model_ID ", null);
             com.Parameters.AddWithValue("@StartDate ", utilitiesDeviceERPSmartMeterCreateRequest.UtilitiesDevice.StartDate);
             com.Parameters.AddWithValue("@EndDate", utilitiesDeviceERPSmartMeterCreateRequest.UtilitiesDevice.EndDate);
             com.Parameters.AddWithValue("@Material_ID ", utilitiesDeviceERPSmartMeterCreateRequest.UtilitiesDevice.MaterialID);
             com.Parameters.AddWithValue("@Name_Plate_ID ", utilitiesDeviceERPSmartMeterCreateRequest.UtilitiesDevice.SerialID);
-            com.Parameters.AddWithValue("@HES_ID", null);
-            com.Parameters.AddWithValue("@Data_Source ", null);
-            com.Parameters.AddWithValue("@Org_ID ", null);
-            com.Parameters.AddWithValue("@Created_by", null);
-            com.Parameters.AddWithValue("@Created_on ", null);
-            com.Parameters.AddWithValue("@changed_by ", null);
-            com.Parameters.AddWithValue("@changed_on ", null);
+            //com.Parameters.AddWithValue("@HES_ID", null);
+            //com.Parameters.AddWithValue("@Data_Source ", null);
+            //com.Parameters.AddWithValue("@Org_ID ", null);
+            //com.Parameters.AddWithValue("@Created_by", null);
+            //com.Parameters.AddWithValue("@Created_on ", null);
+            //com.Parameters.AddWithValue("@changed_by ", null);
+            //com.Parameters.AddWithValue("@changed_on ", null);
             com.ExecuteNonQuery();
+
+            // commented fields are missing in the text document.
         }
 
 
