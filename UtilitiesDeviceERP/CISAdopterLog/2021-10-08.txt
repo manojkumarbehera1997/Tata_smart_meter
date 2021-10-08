@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <UtilitiesDeviceERPSmartMeterCreateRequest_Out xmlns="http://tpddl.org/">
+      <utilitiesDeviceERPSmartMeterCreateRequest>
+        <MessageHeader xmlns="">
+	  <UUID>fa72cb1e-9a02-1eec-83ce-8d2efa6106c3</UUID>
+          <ID schemeID="token" schemeAgencyID="token" schemeAgencySchemeAgencyID="token" />
+          <UUID schemeID="token" schemeAgencyID="token" />
+          <ReferenceID schemeID="token" schemeAgencyID="token" schemeAgencySchemeAgencyID="token" />
+          <ReferenceUUID schemeID="token" schemeAgencyID="token" />
+          <CreationDateTime>2021-10-06</CreationDateTime>
+          <TestDataIndicator>true</TestDataIndicator>
+          <ReconciliationIndicator>true</ReconciliationIndicator>
+          <SenderBusinessSystemID>token</SenderBusinessSystemID>
+          <RecipientBusinessSystemID>token</RecipientBusinessSystemID>
+          <SenderParty>
+            <InternalID xsi:nil="true" />
+            <StandardID xsi:nil="true" />
+            <StandardID xsi:nil="true" />
+            <ContactPerson xsi:nil="true" />
+          </SenderParty>
+          <RecipientParty>
+            <InternalID xsi:nil="true" />
+            <StandardID xsi:nil="true" />
+            <StandardID xsi:nil="true" />
+            <ContactPerson xsi:nil="true" />
+          </RecipientParty>
+          <RecipientParty>
+            <InternalID xsi:nil="true" />
+            <StandardID xsi:nil="true" />
+            <StandardID xsi:nil="true" />
+            <ContactPerson xsi:nil="true" />
+          </RecipientParty>
+          <BusinessScope>
+            <TypeCode xsi:nil="true" />
+            <InstanceID xsi:nil="true" />
+            <ID xsi:nil="true" />
+          </BusinessScope>
+          <BusinessScope>
+            <TypeCode xsi:nil="true" />
+            <InstanceID xsi:nil="true" />
+            <ID xsi:nil="true" />
+          </BusinessScope>
+        </MessageHeader>
+		
+        <UtilitiesDevice xmlns="">
+          <ID schemeID="token" schemeAgencyID="token" >1000312268</ID>
+          <StartDate>2021-10-06</StartDate>
+          <EndDate>2021-10-07</EndDate>
+          <SerialID>90001002</SerialID>
+          <MaterialID schemeID="token" schemeAgencyID="token" >201000570</MaterialID>
+          <ProductUniqueItemID schemeID="token" schemeAgencyID="token" />
+          <IndividualMaterialManufacturerInformation>
+            <PartyInternalID xsi:nil="true" />
+            <PartNumberID xsi:nil="true" />
+            <SerialID>token</SerialID>
+          </IndividualMaterialManufacturerInformation>
+          -<SmartMeter>
+<UtilitiesAdvancedMeteringSystemID>FUG</UtilitiesAdvancedMeteringSystemID>
+</SmartMeter>
+        </UtilitiesDevice>
+      </utilitiesDeviceERPSmartMeterCreateRequest>
+    </UtilitiesDeviceERPSmartMeterCreateRequest_Out>
+  </soap:Body>
+</soap:Envelope>

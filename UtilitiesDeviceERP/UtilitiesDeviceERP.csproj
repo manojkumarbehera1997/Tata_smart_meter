@@ -172,6 +172,7 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CisAdaptorLog.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -189,6 +190,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HES.cs" />
+    <Compile Include="Models\Adaptor.cs" />
     <Compile Include="Models\BusinessDocumentMessageHeader.cs" />
     <Compile Include="Models\BusinessDocumentMessageHeaderParty.cs" />
     <Compile Include="Models\BusinessDocumentMessageHeaderPartyContactPerson.cs" />
